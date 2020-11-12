@@ -1,0 +1,206 @@
+
+html{
+  margin:0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  
+}
+
+section#cover{
+  height: 100vh;
+  background-image: url(./imagenes/local.jpeg);
+  background-size: cover;
+  padding: 1rem 0.5rem;
+  
+}
+
+section#winelist{
+  height: 100%;
+  background-image: url(./imagenes/barriles.jpg);
+  background-size:cover;
+  padding: 1rem;
+  
+}
+ul#winelist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1,h2, p{
+  color: white;
+}
+
+p.cart, li.cartItem p{
+  color: black;
+  font-size: 0.8rem;
+}
+p.cart{
+  color: #900c3f;
+}
+
+ul#item{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+li.cartItem {
+background-color: rgb(233, 224, 224);
+padding: 0.2rem;
+margin:0.2rem;
+border-radius: 1.5em;
+border: 1px solid #900c3f;
+}
+
+
+section#cartResume{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section#cartResume > button{
+  width: 100px;
+  height: 30px;
+}
+
+p.cart img{
+  width:30px;
+  height: 30px;
+}
+
+button.cartButton{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+h2{
+  background-color: rgb(49, 49, 49);
+}
+
+h1#title {
+  color: #900c3f;
+  margin: 0 auto;
+  font-size: 2rem;
+  background-color: black;
+  padding: 1rem 0;
+}
+ 
+
+header{
+  background-color: black;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+nav ul li{
+  margin: 1rem;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.active{
+  display: hidden;
+}
+
+section#oneproduct{
+  margin: 2rem 2rem;
+  text-align: center;
+  font-size: 0.7rem;
+  background-color: #900c3ffd;
+  border: rgba(232, 189, 243, 0.514) 2px dotted;
+  width: 200px;
+  word-break: break-word;
+}
+
+section#oneproduct > h1{
+  font-size:1.2rem;
+  
+}
+
+section#oneproduct > p{
+  font-size:1rem;
+  
+}
+
+section#oneproduct > button{
+  font-size:1rem;
+  
+  
+}
+img{
+  max-width: 100%;
+  height: 300px;
+}
+p#footer{
+  background-color: black;
+  padding: 1rem;
+  margin:0;
+  font-size: 0.7rem;
+}
+
+.hidden{
+  display: none;
+}
+
+@media (min-width: 700px) {
+  p#footer{
+    
+    font-size: 1rem;
+  }
+  h1 {
+    margin-bottom: 2rem;
+  }
+  h1#title {
+    font-size: 4rem;
+  }
+  h2#cover{
+    font-size: 2rem;
+  }
+  a{
+    font-size: 1.3rem;
+  }
+  p.cart, li.cartItem p{
+   
+    font-size: 1.2rem;
+  }
+  button{
+    font-size: 1.2rem;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  h1 {
+    margin-bottom: 2rem;
+  }
+  h1#title {
+    font-size: 5rem;
+  }
+  h2#cover{
+    font-size: 3rem;
+  }
+  p#footer{
+    
+    font-size: 1.2rem;
+  }
+  a{
+    font-size: 1.6rem;
+  }
+}
