@@ -12,21 +12,30 @@ export default function GetCart() {
   console.log(cart);
   console.log(elementsInCart);
   
-/*const change = () =>{
-  toogleSection("") !== toogleSection("hidden");
-  cartSection === "" ? changeWord("Ocultar") : changeWord("Ver")
-
-}*/
+const change = () =>
+  {
+    if(cartSection === "hidden"){
+      toogleSection(""); changeWord("Ocultar");
+    } else{
+      toogleSection("hidden"); changeWord("Ver");
+    }
+  }
    
+const erase = ()=>{
+  getCart([]);
+  getElements(0);
+  getTotal(0);
+  toogleSection("hidden");
+  changeWord("Ver");
+sayThanks("hidden");}
 
   return(
   
-    <>
+    <div className="cart">
    
    <section id="cartResume">
-   <button onClick={()=>
-    toogleSection("")
-    }>{word} carro</button>
+   <button id="seeCart" onClick={change
+   }>{word} carro</button>
    <p className="cart"><img src="img/carro.png" alt="carro"/> {elementsInCart} productos</p>
     
  
@@ -41,30 +50,25 @@ export default function GetCart() {
             return (
               <li className="cartItem" key={index}>
                 <p>Producto: {el.id}. <strong>{el.name}</strong> </p>
+                <p>Precio/ud: <strong>{el.price}</strong> €</p>
                 <p>Cantidad: <strong>{el.added}</strong> ud.</p>
-                <p>Precio unidad: <strong>{el.price}</strong> €</p>
               </li>)
             
             })}
-    
-    
-          </ul>
+       
+    </ul>
     
     
           <p className="cart">Compra total: <strong>{total} €</strong> </p>
     
     
-    <button className="cartButton" onClick={()=>{
-    getCart([]);
-    getElements(0);
-    getTotal(0);
-    toogleSection("hidden")}}>Limpiar carrito</button>
+    <button className="cartButton" onClick={erase}>Limpiar carrito</button>
 
-    <button className="cartButton" onClick={()=>sayThanks("cart")}>Realizar compra</button>
+    <button className="cartButton" id="buy" onClick={()=>sayThanks("cart")}>Realizar compra</button>
     <p className={thanks}>¡Gracias por tu compra! </p>
     </section>
     
-          </> 
+          </div> 
      );
     
   

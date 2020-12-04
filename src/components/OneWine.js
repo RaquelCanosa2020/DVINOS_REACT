@@ -36,8 +36,8 @@ export default function OneWine({
       <h1>{id}. {name}</h1>
       <p>País: {country}</p>  
       <img src = {`img/${image}`}/>
-      <p>Precio: {price} euros</p>  
-      <p>Stock: {currentQuantity}</p> 
+      <p>Precio: {price} €</p>  
+      <p>Stock: {currentQuantity} ud.</p> 
 
       <button onClick = {(element)=>{
                 

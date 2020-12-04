@@ -9,20 +9,31 @@ body {
 }
 
 section#cover{
-  height: 100vh;
+  height: 80vh;
   background-image: url(./imagenes/local.jpeg);
   background-size: cover;
   padding: 1rem 0.5rem;
   
 }
+div.filter fieldset{
+  border:none;
+  
+}
+
 
 section#winelist{
   height: 100%;
   background-image: url(./imagenes/barriles.jpg);
-  background-size:cover;
   padding: 1rem;
   
 }
+
+section#winelist > img{
+  display: none;
+ 
+  
+}
+
 ul#winelist{
   display: flex;
   flex-wrap: wrap;
@@ -32,6 +43,7 @@ ul#winelist{
 h1,h2, p{
   color: white;
 }
+
 
 p.cart, li.cartItem p{
   color: black;
@@ -50,10 +62,11 @@ ul#item{
 
 li.cartItem {
 background-color: rgb(233, 224, 224);
-padding: 0.2rem;
+padding: 0.4rem;
 margin:0.2rem;
 border-radius: 1.5em;
 border: 1px solid #900c3f;
+
 }
 
 
@@ -76,6 +89,12 @@ p.cart img{
 button.cartButton{
   margin: 0.5rem;
   padding: 0.5rem;
+}
+
+button#buy{
+  font-weight: 600;
+  background-color: #900c3f;
+  color: white;
 }
 
 h2{
@@ -116,7 +135,8 @@ a{
 }
 
 .active{
-  display: hidden;
+  color: #900c3ffd;
+  font-weight: bold;
 }
 
 section#oneproduct{
@@ -134,16 +154,10 @@ section#oneproduct > h1{
   
 }
 
-section#oneproduct > p{
+section#oneproduct > p, section#oneproduct > button{
   font-size:1rem;
-  
 }
 
-section#oneproduct > button{
-  font-size:1rem;
-  
-  
-}
 img{
   max-width: 100%;
   height: 300px;
@@ -176,6 +190,13 @@ p#footer{
   a{
     font-size: 1.3rem;
   }
+
+  li.cartItem {
+    margin:0.5rem;
+    padding:0.5rem;
+    
+    
+  }
   p.cart, li.cartItem p{
    
     font-size: 1.2rem;
@@ -183,15 +204,30 @@ p#footer{
   button{
     font-size: 1.2rem;
   }
+
+  section#cartResume > button#seeCart{
+    width: 200px;
+    color: #900c3f;
+  }
 }
 
 
 @media (min-width: 1000px) {
-  h1 {
-    margin-bottom: 2rem;
+
+  header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    
   }
+  
   h1#title {
     font-size: 5rem;
+  }
+  section#oneproduct > h1{
+    font-size:1.4rem;
+    
   }
   h2#cover{
     font-size: 3rem;
@@ -202,5 +238,55 @@ p#footer{
   }
   a{
     font-size: 1.6rem;
+  }
+  
+
+  section#winelist{
+    height: 100%;
+    background-image: none;
+    padding: 0;
+    
+    
+  }
+  ul#winelist{
+    background-color: rgb(255, 255, 255);
+  }
+  
+  section#winelist > img{
+    display: inline;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -1;
+      
+  }
+
+  section#cover{
+    margin-top:11rem;
+    
+  }
+  div.cart{
+  background-color: white;
+  margin-top: 30rem;
+  margin-bottom:0;
+  }
+
+  div.filter{
+    background-color: white;
+    
+    }
+  p.cart img{
+    width:40px;
+    height: 40px;
+  }
+
+  p.cart, li.cartItem p, button{
+   
+    font-size: 1.3rem;
+  }
+  section#oneproduct > p, section#oneproduct > button{
+    font-size:1.2rem;
   }
 }

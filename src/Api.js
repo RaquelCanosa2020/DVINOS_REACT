@@ -6,10 +6,10 @@ const countries = ["España", "Francia", "Italia", "Portugal", "Alemania","Austr
 
 function getData (){
 
-for (let i = 1; i <= 30 ; i++){
+for (let i = 1; i <= 15 ; i++){
     const country = Math.floor(Math.random()*countries.length);
     
-   element = {id: i, name: faker.lorem.word().toUpperCase(), country: countries[country], 
+   element = {id: i, name: faker.lorem.word(5).toUpperCase(), country: countries[country], 
       image: `Vino${Math.ceil(Math.random()*5)}.jpg`, 
       price: 5 + Math.floor(Math.random()*20), quantity: Math.floor(Math.random()*100)};
 
