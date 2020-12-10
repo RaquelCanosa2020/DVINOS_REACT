@@ -1,13 +1,9 @@
-import React, {useContext} from "react";
+import React from "react";
 import OneWine from "./OneWine";
 
-
-
-
 export default function WineList({wines}) {
-  
-  
-  return (
+ 
+return (
 <section id="winelist">
   <img src="img/cepas.jpg" alt="cepas blanco y negro"/>
 <ul id="winelist">
@@ -18,8 +14,6 @@ export default function WineList({wines}) {
     </li>))
 }</ul>
 </section>
-   
-      
     
   );
 }

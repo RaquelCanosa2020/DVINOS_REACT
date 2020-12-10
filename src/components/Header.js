@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {NavLink} from "react-router-dom";
 
 export default function Header() {
@@ -13,6 +13,9 @@ return(
           </li>
           <li>
             <NavLink to="/wines" activeClassName="active">Lista de vinos</NavLink>
+          </li>
+          <li>
+            <NavLink to="/user" activeClassName="active">Tu cuenta</NavLink>
           </li>
         </ul> 
 

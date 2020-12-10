@@ -1,5 +1,7 @@
 import React, {useContext, useState} from "react";
 import {CartContext} from "../context/CartContext";
+import Cartitem from "./Cartitem";
+
 
 
 
@@ -8,9 +10,11 @@ export default function GetCart() {
   const [cartSection, toogleSection] = useState("hidden");
   const [word, changeWord] = useState("Ver")
   const [thanks, sayThanks] = useState("hidden");
+  const [compras, setCompras] = useState(
+    JSON.parse(localStorage.getItem("dvinosPurchases")) || []
+  );
+
   
-  console.log(cart);
-  console.log(elementsInCart);
   
 const change = () =>
   {
@@ -20,56 +24,54 @@ const change = () =>
       toogleSection("hidden"); changeWord("Ver");
     }
   }
-   
+
+const endBuy =()=>{
+    let compra = {date:new Date(), elements: cart, total: total}
+    compras.push(compra);
+    localStorage.setItem("dvinosPurchases", JSON.stringify(compras));
+    console.log(compras);
+    sayThanks("cart");
+    setTimeout(erase, 3000)
+    
+  }
+
+     
 const erase = ()=>{
   getCart([]);
   getElements(0);
   getTotal(0);
   toogleSection("hidden");
   changeWord("Ver");
-sayThanks("hidden");}
+  sayThanks("hidden");}
 
   return(
   
-    <div className="cart">
+  <div className="cart">
    
-   <section id="cartResume">
-   <button id="seeCart" onClick={change
-   }>{word} carro</button>
-   <p className="cart"><img src="img/carro.png" alt="carro"/> {elementsInCart} productos</p>
-    
- 
-   </section>
+    <section id="cartResume">
+      <button id="seeCart" onClick={change
+      }>{word} carro</button>
+
+      <article>
+        <p className="cart"><img src="img/carro.png" alt="carro"/> {elementsInCart} productos</p>
+        <p className="cart"><img src="img/bolsas.png" alt="bolsas"/>Tus compras</p>
+      </article>
+      
+    </section>
     
     
     <section className={cartSection}>
-
-   <ul id="item">
-
-    {cart.map((el, index) => {
-            return (
-              <li className="cartItem" key={index}>
-                <p>Producto: {el.id}. <strong>{el.name}</strong> </p>
-                <p>Precio/ud: <strong>{el.price}</strong> €</p>
-                <p>Cantidad: <strong>{el.added}</strong> ud.</p>
-              </li>)
-            
-            })}
+      
+      <Cartitem cart = {cart} total={total}/>
        
-    </ul>
-    
-    
-          <p className="cart">Compra total: <strong>{total} €</strong> </p>
-    
-    
-    <button className="cartButton" onClick={erase}>Limpiar carrito</button>
+      <button className="cartButton" onClick={erase}>Limpiar carrito</button>
 
-    <button className="cartButton" id="buy" onClick={()=>sayThanks("cart")}>Realizar compra</button>
-    <p className={thanks}>¡Gracias por tu compra! </p>
+      <button className="cartButton" id="buy" onClick={endBuy}>Realizar compra</button>
+
+      <p className={thanks}>¡Gracias por tu compra! </p>
     </section>
     
-          </div> 
+  </div> 
      );
-    
   
 }

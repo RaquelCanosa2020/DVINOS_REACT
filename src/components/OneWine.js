@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { CartContext } from "../context/CartContext";
 //import Vino1 from "../img/Vino1.jpg";
 //import {useParams} from 'react-router-dom';
@@ -25,20 +25,28 @@ export default function OneWine({
 
     
   const [currentQuantity, setQuantity] = useState(quantity);
-  const {cart, getCart, elementsInCart, getElements, total, getTotal} = useContext(CartContext);
+  const {cart, getCart, elementsInCart, getElements, getTotal} = useContext(CartContext);
+  let [stockControl, getControl] = useState("");
   
 
- 
+  useEffect(()=>{
+       
+    if(currentQuantity === 0 ){getControl("AGOTADO")
+  } else{
+    getControl("")};
+        
+  },[currentQuantity, stockControl]);
   
+ 
   
   return (
     <section id="oneproduct">
       <h1>{id}. {name}</h1>
       <p>País: {country}</p>  
-      <img src = {`img/${image}`}/>
+      <img src = {`img/${image}`} alt={name}/>
       <p>Precio: {price} €</p>  
-      <p>Stock: {currentQuantity} ud.</p> 
-
+      <p className={stockControl}>Stock: {currentQuantity} ud.</p> 
+      <p>{stockControl}</p>
       <button onClick = {(element)=>{
                 
         if (currentQuantity > 0){
@@ -61,7 +69,7 @@ export default function OneWine({
          
           
         }
-        else{setQuantity(0)}}}>Comprar</button>      
+        else{setQuantity(0);}}}>Comprar</button>      
     </section>
    
   );

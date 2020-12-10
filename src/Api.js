@@ -11,7 +11,7 @@ for (let i = 1; i <= 15 ; i++){
     
    element = {id: i, name: faker.lorem.word(5).toUpperCase(), country: countries[country], 
       image: `Vino${Math.ceil(Math.random()*5)}.jpg`, 
-      price: 5 + Math.floor(Math.random()*20), quantity: Math.floor(Math.random()*100)};
+      price: 5 + Math.floor(Math.random()*20), quantity: Math.floor(Math.random()*5)};
 
       wines.push(element);
       
@@ -23,8 +23,15 @@ for (let i = 1; i <= 15 ; i++){
 wines = getData();
 
 
+const users=[
+      {
+            id:1, name:"admin", password:"12345678"
+      },
+      {
+            id:2, name:"user1", password:"87654321"
+      }
+]
 
 
 
-
-export default wines;
+export {wines, countries, users};
