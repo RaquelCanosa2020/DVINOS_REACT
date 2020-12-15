@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default function Countries({countries, countrySelected, handleCountry}) {
-    console.log(countrySelected)
+    
     return (
         <select name={countrySelected} id={countrySelected}
         onChange={handleCountry}>

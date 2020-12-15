@@ -1,4 +1,5 @@
 import React, {useContext, useState} from "react";
+import {Link} from "react-router-dom";
 import {CartContext} from "../context/CartContext";
 import Cartitem from "./Cartitem";
 
@@ -54,7 +55,7 @@ const erase = ()=>{
 
       <article>
         <p className="cart"><img src="img/carro.png" alt="carro"/> {elementsInCart} productos</p>
-        <p className="cart"><img src="img/bolsas.png" alt="bolsas"/>Tus compras</p>
+        <Link to="/user"><p className="cart"><img src="img/bolsas.png" alt="bolsas"/>Tus compras</p></Link>
       </article>
       
     </section>

@@ -34,9 +34,9 @@ function AppContextProvider({children}){
         && wine.price <=priceSelected
         && (wine.country === countrySelected || countrySelected ==="cualquiera")
        
-    })
+    });
 
-    
+        
     
 
 

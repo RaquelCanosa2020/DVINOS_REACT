@@ -2,7 +2,10 @@
 html{
   margin:0;
   padding: 0;
-}
+  --red:  #900c3f;
+  --white: whitesmoke;
+  --black: rgb(20, 20, 20);}
+ 
 body {
   text-align: center;
   
@@ -10,9 +13,10 @@ body {
 
 section#cover{
   height: 80vh;
+  width: 100%;
   background-image: url(./imagenes/parra.jpg);
   background-size: cover;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0rem;
   
 }
 div.filter fieldset{
@@ -51,28 +55,37 @@ ul#winelist{
 }
 
 h1,h2, p{
-  color: white;
+  color:var(--white);
+}
+
+p#charge{
+  color: var(--black);
+margin-top: 5rem;
+}
+
+section#cartResume{
+  padding: 0.5rem;
 }
 
 section#cartResume > article{
   display:flex;
 }
 p.cart, li.cartItem p{
-  color: black;
+  color:var(--black);
   font-size: 0.8rem;
 }
 p.cart{
-  color: #900c3f;
+  color:var(--red);
   padding: 0 0.5rem;
 }
 
 ul.purchases p.cart{
-  color: white;
+  color:var(--white);
 }
 
 ul.purchases > li {
   margin: 1rem;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   border-radius: 2em;
 }
 
@@ -84,7 +97,7 @@ p.AGOTADO{
 div#notfound{
   height: 100vh;
   width: 100%;
-  background-color: #900c3f;
+  background-color:  var(--red);
   display: flex;
   flex-direction:column;
   justify-content: center;
@@ -92,13 +105,13 @@ div#notfound{
 
 div#notfound > p{
    margin:0;
-   color: white;
+   color:var(--white);
   font-size: 2rem;
 }
 
 section#oneproduct > p:last-of-type{
-  color:  #900c3f;
-  background-color: white;
+  color:  var(--red);
+  background-color: var(--white);
   font-weight:bold;
   
 }
@@ -115,7 +128,7 @@ background-color: rgb(233, 224, 224);
 padding: 0.4rem;
 margin:0.2rem;
 border-radius: 1.5em;
-border: 1px solid #900c3f;
+border: 1px solid var(--red);
 }
 
 
@@ -130,9 +143,18 @@ section#cartResume > button{
   height: 30px;
 }
 
-p.cart img{
+p.cart img {
   width:30px;
   height: 30px;
+}
+.menuButton{
+  background-color: var(--red);
+  border: none;
+}
+
+.menuButton img{
+  width: 20px;
+  height: 20px;
 }
 
 button.cartButton{
@@ -142,8 +164,8 @@ button.cartButton{
 
 button#buy{
   font-weight: 600;
-  background-color: #900c3f;
-  color: white;
+  background-color: var(--red);
+  color:var(--white);
 }
 
 h2{
@@ -151,16 +173,16 @@ h2{
 }
 
 h1#title {
-  color: #900c3f;
+  color:var(--red);
   margin: 0 auto;
   font-size: 2rem;
-  background-color: black;
+  background-color: var(--black);
   padding: 1rem 0;
 }
  
 
 header{
-  background-color: black;
+  background-color: var(--black);
 }
 
 ul{
@@ -168,23 +190,35 @@ ul{
   padding: 0;
   margin: 0;
 }
-
 nav ul{
-  display: flex;
-  justify-content: flex-end;
-  
+  text-align: left;
+  position: absolute;
+  left:-150px;
+  top: 94px;
+  transition: left 1s; 
+  background-color: var(--black);
 }
+
 nav ul li{
   margin: 1rem;
 }
 
+nav ul.visibleMenu{
+left:0;
+}
+
+nav{
+  display: flex;
+  justify-content: flex-start;
+}
+
 a{
-  color: white;
+  color: var(--white);
   text-decoration: none;
 }
 
 .active{
-  color: #900c3ffd;
+  color:var(--red);
   font-weight: bold;
 }
 
@@ -192,8 +226,8 @@ section#oneproduct{
   margin: 2rem 2rem;
   text-align: center;
   font-size: 0.7rem;
-  background-color: #900c3ffd;
-  border: rgba(232, 189, 243, 0.514) 2px dotted;
+  background-color: var(--red);
+  border: var(--black) 2px solid;
   width: 200px;
   word-break: break-word;
 }
@@ -212,7 +246,7 @@ img{
 }
 
 p#footer{
-  background-color: black;
+  background-color:var(--black);
   padding: 1rem;
   margin:0;
   font-size: 0.7rem;
@@ -221,7 +255,7 @@ p#footer{
 div.user{
   min-height: 100vh;
   padding-top: 3rem;
-  background-color: #900c3f;
+  background-color: var(--red);
   display: flex;
   flex-direction: column;
  }
@@ -229,6 +263,12 @@ div.user{
  div.user > h1{
    font-size: 1.5rem;
  }
+
+ div.user > p{
+  width:80%;
+  margin: 0 auto;
+  
+}
 
  button#erasePurchase{
    width: 200px;
@@ -244,6 +284,22 @@ div.user{
 }
 
 @media (min-width: 700px) {
+
+  nav{
+    
+    justify-content: flex-end;
+  }
+
+  nav ul{
+    display: flex;
+    text-align: center;
+    position: relative;
+    top:0;
+  }
+
+  .menuButton{
+    display: none;
+  }
   p#footer{
     
     font-size: 1rem;
@@ -285,10 +341,11 @@ div.user{
   button{
     font-size: 1.2rem;
   }
+  
 
   section#cartResume > button#seeCart{
     width: 200px;
-    color: #900c3f;
+    color: var(--red);
   }
 
   div.user > h1{
@@ -338,7 +395,7 @@ div.user{
   
   }
   ul#winelist{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
   }
   
   section#winelist > img{
@@ -356,13 +413,13 @@ div.user{
   }
 
   div.cart{
-  background-color: white;
+  background-color: var(--white);
   margin-top: 20rem;
   margin-bottom:0;
   }
 
   div.filter{
-    background-color: white;
+    background-color:var(--white);
   }
 
   p.cart img{

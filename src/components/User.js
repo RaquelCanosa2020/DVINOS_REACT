@@ -20,8 +20,7 @@ if (window.confirm("Confirma que quieres borrar todo. Esta acción es irreversib
 if(!totalPurchase || totalPurchase === []){
     return (
         <div className="user">
-            <p>Aún no has realizado ninguna compra en DVINOS</p>
-
+            <p>No hay compras</p>
         </div>
     )
 } else{
@@ -40,6 +39,7 @@ if(!totalPurchase || totalPurchase === []){
             </ul>
 
             <button id="erasePurchase" onClick={eraseAll}>BORRAR COMPRAS</button>
+            
             
 
         </div>
