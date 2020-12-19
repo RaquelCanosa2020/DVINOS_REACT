@@ -13,7 +13,7 @@ import OneWine from "./components/OneWine";
 import Purchases from "./components/User.js"
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
-import {AppError, AppWaiting} from "./components/AppStatus";
+import {AppError} from "./components/AppStatus";
 
 
 
@@ -27,7 +27,7 @@ const{filtered} = useContext(AppContext);
       
 
     <AppError/>
-    <AppWaiting/>
+    
 
       
 

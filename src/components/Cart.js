@@ -11,7 +11,7 @@ export default function GetCart() {
   const [cartSection, toogleSection] = useState("hidden");
   const [word, changeWord] = useState("Ver")
   const [thanks, sayThanks] = useState("hidden");
-  const [compras, setCompras] = useState(
+  const [compras] = useState(
     JSON.parse(localStorage.getItem("dvinosPurchases")) || []
   );
 

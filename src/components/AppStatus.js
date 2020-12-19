@@ -13,7 +13,7 @@ const {error, setError} = useContext(AppContext);
     </>
 }
 
-export function AppWaiting(){
+/* export function AppWaiting(){
     const {waiting, setWaiting} = useContext(AppContext);
     return <> {waiting ? <div className="waiting">Cargando.....</div> : null} </>
-}
+} */

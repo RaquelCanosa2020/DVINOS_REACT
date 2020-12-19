@@ -3,7 +3,7 @@ import OneWine from "./OneWine";
 
 
 export default function WineList({wines}) {
-  console.log(wines);
+  
   if(wines.length === 0){
     
     return (
