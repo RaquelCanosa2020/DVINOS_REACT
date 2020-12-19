@@ -11,7 +11,7 @@ for (let i = 1; i <= 15 ; i++){
     
     
     element = {id: i, name: faker.lorem.word(5).toUpperCase(), country: countries[country], 
-      image: `Vino${Math.ceil(Math.random()*5)}.jpg`, 
+      image: `vino${Math.ceil(Math.random()*5)}.jpg`, 
       price: 5 + Math.floor(Math.random()*20), quantity: Math.floor(Math.random()*50)};
 
        wines.push(element);

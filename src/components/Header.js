@@ -18,7 +18,7 @@ export default function Header() {
  
 return(
 <header className="principal">
-      <h1 id="title">DVINOS</h1>
+      <h1 id="title">VINI MUNDI</h1>
       <nav>
         <button className="menuButton" onClick={changeMenu}><img id="menu" src={`img/${content}`} alt="menu"/></button>
         <ul className={classMenu}>
