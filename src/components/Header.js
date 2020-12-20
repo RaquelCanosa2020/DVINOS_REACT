@@ -4,32 +4,32 @@ import {NavLink} from "react-router-dom";
 export default function Header() {
 
   const [classMenu, setClass] = useState("");
-  const [content, setContent] = useState("boton_menu.png");
+  const [content, setContent] = useState("menu.png");
 
   const changeMenu = () =>{
     if(classMenu === ""){
       setClass("visibleMenu");
-      setContent("cerrar.png");
+      setContent("close.png");
     } else {
       setClass("");
-      setContent("boton_menu.png")
+      setContent("menu.png")
     }
   }
  
 return(
 <header className="principal">
-      <h1 id="title">VINI MUNDI</h1>
+      <h1 id="title">DVINOS</h1>
       <nav>
         <button className="menuButton" onClick={changeMenu}><img id="menu" src={`img/${content}`} alt="menu"/></button>
         <ul className={classMenu}>
           <li>
-            <NavLink exact to="/" activeClassName="active">Portada</NavLink>
+            <NavLink exact to="/" activeClassName="active" onClick={changeMenu}>Portada</NavLink>
           </li>
           <li>
-            <NavLink to="/wines" activeClassName="active">Lista de vinos</NavLink>
+            <NavLink to="/wines" activeClassName="active" onClick={changeMenu}>Lista de vinos</NavLink>
           </li>
           <li>
-            <NavLink to="/user" activeClassName="active">Tu cuenta</NavLink>
+            <NavLink to="/user" activeClassName="active" onClick={changeMenu}>Tu cuenta</NavLink>
           </li>
                    
         </ul> 

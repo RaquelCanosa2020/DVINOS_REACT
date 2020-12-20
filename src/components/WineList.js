@@ -8,7 +8,7 @@ export default function WineList({wines}) {
     
     return (
       <section id="winelist">
-        <img src="img/cepas.jpg" alt="cepas blanco y negro"/>
+        <img src="img/strains.jpg" alt="cepas blanco y negro"/>
        
       <p>No hay vinos que cumplan los criterios</p>
       </section>
@@ -19,7 +19,7 @@ export default function WineList({wines}) {
 
     return (
       <section id="winelist">
-        <img src="img/cepas.jpg" alt="cepas blanco y negro"/>
+        <img src="img/strains.jpg" alt="cepas blanco y negro"/>
        
       <ul id="winelist">
                        

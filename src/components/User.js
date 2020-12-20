@@ -39,8 +39,6 @@ if(!totalPurchase || totalPurchase === []){
             </ul>
 
             <button id="erasePurchase" onClick={eraseAll}>BORRAR COMPRAS</button>
-            
-            
 
         </div>
     )

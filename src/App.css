@@ -3,12 +3,24 @@ html{
   margin:0;
   padding: 0;
   --red:  #900c3f;
+  --darkred:  #5d0829;
   --white: whitesmoke;
-  --black: rgb(20, 20, 20);}
+  --black: rgb(20, 20, 20);
+  --gray:  rgb(163, 163, 163);}
  
 body {
   text-align: center;
   
+}
+
+main{
+  background-color: var(--white);
+}
+header{
+  position: fixed;
+  width: 100%;
+  top:0;
+  left:0;
 }
 
 section#cover{
@@ -17,6 +29,8 @@ section#cover{
   background-image: url(./imagenes/parra.jpg);
   background-size: cover;
   padding: 1rem 0rem;
+  margin-top: 5rem;
+ 
   
 }
 div.filter fieldset{
@@ -35,21 +49,28 @@ input#priceFilter{
 }
 
 
+
 section#winelist{
   height: 100%;
-  background-image: url(./imagenes/barriles.jpg);
   padding: 1rem;
+  
   
 }
 
-section#winelist > img{
-  display: none;
-
-}
 
 section#winelist > p{
   color: var(--red);
+  min-height: 80vh;
 
+}
+section#winelist > img{
+  display: inline;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top:5rem;
+  left:0;
+  z-index: -1;
 }
 
 ul#winelist{
@@ -67,6 +88,11 @@ p#charge{
 margin-top: 5rem;
 }
 
+div.cart{
+  margin-top: 11.5rem;
+  
+}
+
 section#cartResume{
   padding: 0.5rem;
 }
@@ -81,6 +107,11 @@ p.cart, li.cartItem p{
 p.cart{
   color:var(--red);
   padding: 0 0.5rem;
+}
+
+a p.cart:hover{
+color: var(--darkred);
+background-color: var(--gray);
 }
 
 ul.purchases p.cart{
@@ -136,6 +167,7 @@ border: 1px solid var(--red);
 }
 
 
+
 section#cartResume{
   display: flex;
   justify-content: space-around;
@@ -147,6 +179,24 @@ section#cartResume > button{
   height: 30px;
 }
 
+section#cartResume > button#seeCart{
+  
+  width: 110px;
+  height: 40px;
+ 
+}
+
+section#cartResume > button#seeCart:hover, button.cartButton:hover{
+  
+  background-color: var(--gray);
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+ 
+}
+div.cart p{
+  color: var(--red);
+}
+
 p.cart img {
   width:30px;
   height: 30px;
@@ -154,11 +204,14 @@ p.cart img {
 .menuButton{
   background-color: gray;
   border: none;
+  padding:0;
+  width: 30px;
+  height: 30px;
 }
 
 .menuButton img{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 button.cartButton{
@@ -170,6 +223,15 @@ button#buy{
   font-weight: 600;
   background-color: var(--red);
   color:var(--white);
+}
+button#buy:hover{
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  background-color: #5d0829;
+}
+
+p#thanks{
+  font-size: 1.8rem;
 }
 
 h2{
@@ -276,11 +338,18 @@ div.user{
 
  button#erasePurchase{
    width: 200px;
-   color: red;
+   color: var(--red);
    font-weight: bold;
-   border: 2px solid red;
-   border-radius: 2em;
-   margin: auto;
+   margin: 1rem auto;
+   padding: 0.5rem 0;
+   
+ }
+
+ button#erasePurchase:hover{
+   border-right: 3px solid white;
+   border-bottom: 3px solid white;
+   background-color: var(--darkred);
+   color:white;
  }
 
 .hidden{
@@ -304,6 +373,14 @@ div.user{
 
   .menuButton{
     display: none;
+  }
+
+  section#cover{
+    margin-top:10rem;
+  }
+  div.cart{
+    margin-top: 20rem;
+    
   }
   p#footer{
     
@@ -351,6 +428,7 @@ div.user{
   section#cartResume > button#seeCart{
     width: 200px;
     color: var(--red);
+   
   }
 
   div.user > h1{
@@ -365,12 +443,7 @@ div.user{
 
 @media (min-width: 1000px) {
 
-  header{
-    position: fixed;
-    width: 100%;
-    top:0;
-    left:0;
-  }
+  
   
   h1#title {
     font-size: 5rem;
@@ -395,7 +468,7 @@ div.user{
   
   section#winelist{
     height: 100%;
-    background-image: none;
+   
     padding: 0;
   
   }
@@ -403,15 +476,7 @@ div.user{
     background-color: var(--white);
   }
   
-  section#winelist > img{
-    display: inline;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: -1;
-  }
+  
 
   section#cover{
     margin-top:11rem;
@@ -422,6 +487,8 @@ div.user{
   margin-top: 20rem;
   margin-bottom:0;
   }
+
+  
 
   div.filter{
     background-color:var(--white);
@@ -446,6 +513,9 @@ div.user{
     div.user > h1{
       font-size: 2.5rem;
     }
+    div.cart{
+      margin-top: 25rem;
+     }
 }
 @media (min-width: 1300px){
   div.cart{
@@ -457,5 +527,14 @@ div.user{
   }
   div.user > h1{
     font-size: 2.7rem;
+  }
+  section#winelist > img{
+    display: inline;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -1;
   }
 }
