@@ -59,11 +59,10 @@ const erase = ()=>{
   <div className="cart">
    
     <section id="cartResume">
-      <button id="seeCart" onClick={change
-      }>{word} carro</button>
+      <button id="seeCart" onClick={change}>{word} carro</button>
 
       <article>
-        <p className="cart"><img src="img/cart.png" alt="carro"/> {elementsInCart} productos</p>
+        <p className="cart" onClick={change}><img src="img/cart.png" alt="carro"/> {elementsInCart} productos</p>
         <Link to="/user"><p className="cart"><img src="img/bags.png" alt="bags"/>Tus compras</p></Link>
       </article>
       
