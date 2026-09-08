@@ -4,11 +4,13 @@ let element = {};
 const countries = ["España", "Francia", "Italia", "Portugal", "Alemania","Australia", "Chile", "EEUU"];
 
 
- function getData (){
+function getData (){
 
 for (let i = 1; i <= 15 ; i++){
     const country = Math.floor(Math.random()*countries.length);
-    
+
+   
+      
     
     element = {id: i, name: faker.lorem.word(5).toUpperCase(), country: countries[country], 
       image: `wine${Math.ceil(Math.random()*5)}.jpg`, 
@@ -22,6 +24,7 @@ for (let i = 1; i <= 15 ; i++){
 }
 
 wines = getData();
+
 
 
 const users=[

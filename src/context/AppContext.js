@@ -9,7 +9,7 @@ function AppContextProvider({children}){
     const [filter, setFilter] = useState("");
     const [priceSelected, setPrice] = useState(25);
     const [countrySelected, setCountry] = useState("cualquiera");
-    
+    const[userName, setName] = useState("Anónimo");
 
     const handleFilterChange = (event) =>{
         setFilter(event.target.value);
@@ -36,7 +36,11 @@ function AppContextProvider({children}){
        
     });
 
-        
+    const recordName = (anyName) => {
+        setName()
+        localStorage.setItem("dvinosUserName", JSON.stringify(anyName));
+        console.log(anyName);
+    }   
     
 
 
@@ -52,8 +56,10 @@ filtered,
 priceSelected,
 handlePrice,
 countrySelected,
- handleCountry
-
+ handleCountry,
+ userName, 
+ setName,
+ recordName
 }}>
     {children}
 </AppContext.Provider>

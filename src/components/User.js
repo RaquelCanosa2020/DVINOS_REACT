@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import Cartitem from "./Cartitem";
+import {Link} from "react-router-dom";
 import {format} from "date-fns";
+import Cartitem from "./Cartitem";
 
 
 export default function Purchases() {
@@ -21,6 +22,7 @@ if(!totalPurchase || totalPurchase === []){
     return (
         <div className="user">
             <p>No hay compras</p>
+            <Link to="/wines"><span>&#8592;</span> Volver</Link> 
         </div>
     )
 } else{
@@ -39,6 +41,7 @@ if(!totalPurchase || totalPurchase === []){
             </ul>
 
             <button id="erasePurchase" onClick={eraseAll}>BORRAR COMPRAS</button>
+            <Link to="/wines"><span>&#8592;</span> Volver</Link> 
 
         </div>
     )

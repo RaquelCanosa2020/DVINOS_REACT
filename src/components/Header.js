@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 
-export default function Header() {
+
+export default function Header({userName}) {
 
   const [classMenu, setClass] = useState("");
   const [content, setContent] = useState("menu.png");
+  
+  console.log(userName);
 
   const changeMenu = () =>{
     if(classMenu === ""){
@@ -19,6 +22,7 @@ export default function Header() {
 return(
 <header className="principal">
       <h1 id="title">DVINOS</h1>
+     
       <nav>
         <button className="menuButton" onClick={changeMenu}><img id="menu" src={`img/${content}`} alt="menu"/></button>
         <ul className={classMenu}>
@@ -29,7 +33,7 @@ return(
             <NavLink to="/wines" activeClassName="active" onClick={changeMenu}>Lista de vinos</NavLink>
           </li>
           <li>
-            <NavLink to="/user" activeClassName="active" onClick={changeMenu}>Tu cuenta</NavLink>
+            <NavLink to="/user" activeClassName="active" onClick={changeMenu}>Tu cuenta -{userName} </NavLink>
           </li>
                    
         </ul> 

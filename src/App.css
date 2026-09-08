@@ -2,7 +2,8 @@
 html{
   margin:0;
   padding: 0;
-  --red:  #900c3f;
+  --red:  #8f3356;
+  --title-red: #c75a7d;
   --darkred:  #5d0829;
   --white: whitesmoke;
   --black: rgb(20, 20, 20);
@@ -32,6 +33,27 @@ section#cover{
   margin-top: 5rem;
 }
 
+div#demoNotice{
+  width: min(80%, 32rem);
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 2px solid var(--white);
+  box-sizing: border-box;
+}
+
+div#demoNotice p{
+  margin: 0 0 0.5rem;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+div#demoNotice span{
+  color: var(--white);
+  font-size: 1rem;
+}
+
 div.filter fieldset{
   border:none;
 }
@@ -53,7 +75,7 @@ section#winelist{
 
 
 section#winelist > p{
-  color: var(--red);
+  color: var(--title-red);
   min-height: 80vh;
 }
 
@@ -92,6 +114,7 @@ section#cartResume{
 
 section#cartResume > article{
   display:flex;
+  
 }
 
 p.cart, li.cartItem p{
@@ -100,14 +123,19 @@ p.cart, li.cartItem p{
 }
 
 p.cart{
-  color:var(--red);
+  color:var(--title-red);
   padding: 0 0.5rem;
-  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0;
+  
 }
 
-p.cart:hover{
+#cartResume article:hover{
 color: var(--darkred);
 background-color: var(--gray);
+cursor: pointer;
+
 }
 
 ul.purchases p.cart{
@@ -140,7 +168,7 @@ div#notfound > p{
 }
 
 section#oneproduct > p:last-of-type{
-  color:  var(--red);
+  color:  var(--title-red);
   background-color: var(--white);
   font-weight:bold;
 }
@@ -165,27 +193,41 @@ section#cartResume{
   align-items: center;
 }
 
+button#buttonUp{
+  position: fixed;
+  bottom: 1rem;
+  right: 0.5rem;
+  background-color: var(--red);
+  color: white;
+  
+}
+
+span{
+  font-size: 2rem;
+  
+}
+
 section#cartResume > button{
   width: 100px;
   height: 30px;
 }
 
-section#cartResume > button#seeCart{
+/* section#cartResume > button#seeCart{
   width: 110px;
   height: 40px;
-}
+} */
 
-section#cartResume > button#seeCart:hover, button.cartButton:hover{
+/* section#cartResume > button#seeCart:hover, */ button.cartButton:hover{
   background-color: var(--gray);
   border-bottom: 2px solid black;
   border-right: 2px solid black;
  }
 
 div.cart p{
-  color: var(--red);
+  color: var(--title-red);
 }
 
-p.cart img {
+#cartResume article img {
   width:30px;
   height: 30px;
 }
@@ -229,7 +271,7 @@ h2{
 }
 
 h1#title {
-  color:var(--red);
+  color:var(--title-red);
   margin: 0 auto;
   font-size: 2rem;
   background-color: var(--black);
@@ -249,9 +291,10 @@ ul{
 nav ul{
   text-align: left;
   position: absolute;
-  left:-150px;
+  left:0;
   top: 94px;
-  transition: left 1s; 
+  transform: translateX(-100%);
+  transition: transform 1s;
   background-color: var(--black);
 }
 
@@ -260,7 +303,7 @@ nav ul li{
 }
 
 nav ul.visibleMenu{
-left:0;
+  transform: translateX(0);
 }
 
 nav{
@@ -274,7 +317,7 @@ a{
 }
 
 .active{
-  color:var(--red);
+  color:var(--title-red);
   font-weight: bold;
 }
 
@@ -307,12 +350,45 @@ p#footer{
   font-size: 0.7rem;
 }
 
+p#footer a{
+  font-size: inherit;
+}
+
+section#privacy{
+  min-height: 100vh;
+  padding: 12rem 1rem 3rem;
+  background-color: var(--white);
+  text-align: left;
+}
+
+section#privacy h1,
+section#privacy h2,
+section#privacy p{
+  color: var(--black);
+}
+
+section#privacy h1{
+  color: var(--title-red);
+}
+
+section#privacy h2{
+  background-color: transparent;
+}
+
+section#privacy p{
+  max-width: 70rem;
+  line-height: 1.5;
+}
+
 div.user{
   min-height: 100vh;
   padding-top: 3rem;
   background-color: var(--red);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
  div.user > h1{
@@ -321,13 +397,14 @@ div.user{
 
  div.user > p{
   width:80%;
-  margin: auto;
   font-size: 1.2rem;
 }
 
- button#erasePurchase{
+
+
+button#erasePurchase{
    width: 200px;
-   color: var(--red);
+  color: var(--title-red);
    font-weight: bold;
    margin: 1rem auto;
    padding: 0.5rem 0;
@@ -356,6 +433,8 @@ div.user{
     position: relative;
     top:0;
     left:0;
+    transform: none;
+    transition: none;
   }
 
   .menuButton{
@@ -409,16 +488,38 @@ div.user{
     font-size: 1.2rem;
   }
 
+  #cartResume article{
+    padding: 1rem;
+  }
+
+  #cartResume article img{
+    width:40px;
+    height: 40px;
+  }
+
   button{
     font-size: 1.2rem;
   }
+
+  button#buttonUp{
+    right: 1rem;
+    
+  }
+  span{
+    font-size: 3rem;
+  }
   
-  section#cartResume > button#seeCart{
+  /* section#cartResume > button#seeCart{
     width: 200px;
     color: var(--red);
-  }
+  } */
 
   div.user > h1{
+    font-size: 2rem;
+  }
+
+  div.user > p{
+    
     font-size: 2rem;
   }
 
@@ -474,9 +575,9 @@ div.user{
     background-color:var(--white);
   }
 
-  p.cart img{
-    width:40px;
-    height: 40px;
+  #cartResume article img{
+    width:50px;
+    height: 50px;
    }
 
   p.cart, li.cartItem p, button{
@@ -503,10 +604,6 @@ div.user{
     margin-top: 30rem;
    }
 
-  p.cart{
-    padding: 0 1.2rem;
-  }
-
   div.user > h1{
     font-size: 2.7rem;
   }
@@ -519,5 +616,13 @@ div.user{
     top:0;
     left:0;
     z-index: -1;
+  }
+
+  button#buttonUp{
+    right: 1rem;
+  
+  }
+  span{
+    font-size: 4rem;
   }
 }

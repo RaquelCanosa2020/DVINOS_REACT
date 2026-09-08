@@ -12,13 +12,14 @@ import WineList from "./components/WineList";
 import OneWine from "./components/OneWine";
 import Purchases from "./components/User.js"
 import Footer from "./components/Footer";
+import Privacy from "./components/Privacy";
 import NotFound from "./components/NotFound";
 import {AppError} from "./components/AppStatus";
 
 
 
 function App() {
-const{filtered} = useContext(AppContext);
+const{filtered, userName} = useContext(AppContext);
   
 
   return (
@@ -31,7 +32,7 @@ const{filtered} = useContext(AppContext);
 
       
 
-      <Header/>
+      <Header userName={userName}/>
 
       <main>
 
@@ -53,6 +54,10 @@ const{filtered} = useContext(AppContext);
 
           <Route exact path="/user">
           <Purchases/> 
+          </Route>
+
+          <Route exact path="/privacy">
+          <Privacy/>
           </Route>
 
           <Route path="*">
